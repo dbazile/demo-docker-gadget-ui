@@ -1,3 +1,4 @@
+import axios from 'axios'
 import * as L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
@@ -11,8 +12,7 @@ window['__map__'] = L.map('map', {  // tslint:disable-line
 })
 
 
-fetch('/api/')
-    .then(response => response.json())
+axios.get('/api/')
     .then(data => {
-        document.querySelector('#api').textContent = 'Response from /api/:\n\n' + JSON.stringify(data, null, 4)
+        document.querySelector('#api').textContent = `Response from /api/:\n\n${JSON.stringify(data, null, 4)}`
     })
