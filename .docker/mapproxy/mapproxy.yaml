@@ -1,0 +1,27 @@
+services:
+  wmts:
+  demo:
+
+
+grids:
+  webmercator:
+    base: GLOBAL_WEBMERCATOR
+
+
+sources:
+  osm:
+    type: tile
+    grid: webmercator
+    url: http://osm.geointservices.io/osm_tiles/%(z)s/%(x)s/%(y)s.png64
+
+
+caches:
+  osm_cache:
+    sources: [osm]
+    grids: [webmercator]
+
+
+layers:
+  - name: osm
+    title: OpenStreetMap
+    sources: [osm_cache]

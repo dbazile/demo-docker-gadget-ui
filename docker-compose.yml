@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  api:
+    build: .docker/api
+    ports:
+      - '3001:80'
+
+  geoserver:
+    build: .docker/geoserver
+    ports:
+      - '3002:80'
+
+  mapproxy:
+    build: .docker/mapproxy
+    ports:
+      - '3003:80'
+
+  nginx:
+    image: nginx
+    environment:
+      - NGINX_PORT=80
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - '80:80'
+    command: nginx -g 'daemon off;'
