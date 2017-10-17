@@ -1,54 +1,16 @@
-# new-webapp
+# demo-docker-gadget-ui
 
-> Starter project for Webpack SPA webapps.
+> Demonstration for UI/UX Working Group of how Docker Compose could help bootstrap backing services for doing GIS UI development.
 
 [![Build Status](https://travis-ci.org/dbazile/new-webapp.svg?branch=master)](https://travis-ci.org/dbazile/new-webapp)
 
 
-## Running locally for development
+## Usage
 
 ```bash
+# In one terminal, run
+docker-compose up
+
+# In another terminal, run
 ./scripts/develop.sh
 ```
-
-
-## Building
-
-### Compiling all assets
-
-```bash
-./scripts/compile.sh
-```
-
-### Packaging for deployment
-
-```bash
-./scripts/package.sh
-```
-
-
-## Linting source code
-
-```bash
-./scripts/lint.sh
-
-# Automatically fix certain linter errors
-./scripts/lint.sh --fix
-```
-
-
-## Running unit tests
-
-```bash
-./scripts/test.sh
-
-# Run in watch mode
-./scripts/test.sh --watchAll
-```
-
-
-## Environment Variables
-
-| Variable | Description |
-|----------|-------------|
-| `--` | N/A |
